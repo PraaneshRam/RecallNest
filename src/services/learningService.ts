@@ -1,3 +1,4 @@
+import { getApiUrl } from './apiConfig'
 import { getSession } from './authService'
 
 export type LearningEntry = {
@@ -35,7 +36,7 @@ export type ReviewAttempt = {
 type ApiError = { error?: string }
 
 const request = async <T>(path: string, options?: RequestInit): Promise<T> => {
-  const response = await fetch(`/api${path}`, {
+  const response = await fetch(getApiUrl(`/api${path}`), {
     headers: {
       'Content-Type': 'application/json',
       ...(getSession()?.token ? { Authorization: `Bearer ${getSession()?.token}` } : {}),

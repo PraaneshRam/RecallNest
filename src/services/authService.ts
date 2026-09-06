@@ -1,3 +1,5 @@
+import { getApiUrl } from './apiConfig'
+
 export type AuthUser = {
   id: string
   name: string
@@ -31,7 +33,7 @@ export const clearSession = () => localStorage.removeItem(sessionKey)
 const request = async (path: string, body: { name?: string; email: string; password: string }) => {
   let response: Response
   try {
-    response = await fetch(`/api/auth${path}`, {
+    response = await fetch(getApiUrl(`/api/auth${path}`), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(body),
