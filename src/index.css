@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #eef3f1;
+  color: #23343b;
+  font-family: Georgia, 'Times New Roman', serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+p {
+  margin: 0;
+  max-width: 34rem;
+  line-height: 1.6;
+}
